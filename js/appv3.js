@@ -229,13 +229,13 @@ var viewModel = function() {
     // Displays the markers of filtered locations.
     var fltr = ko.computed(function() {
         var items = self.filteredItems();
-        if (items.length != 0) {
+        if (items.length !== 0) {
             self.isempty(false);
             hideMarkers();
             var mrks = [];
             for (var i = 0; i < items.length; i++)
-                mrks.push(items[i].marker)
-            showMarkers(mrks);
+                mrks.push(items[i].marker);
+                showMarkers(mrks);
         } else {
             self.isempty(true);
             showMarkers(markers);
